@@ -4,7 +4,7 @@ var
   singleCtrl = require('../controller/singleCtrl.js')
 
 
-singlerouter.route('/')
+singleRouter.route('/')
   .get(singleCtrl.index)
   .post(singleCtrl.create)
 

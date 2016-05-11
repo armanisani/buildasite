@@ -1,5 +1,5 @@
 var
-  Ecommerce = require('../models/Eccommerce.js')
+  Ecommerce = require('../models/Ecommerce.js')
 
 
 module.exports = {

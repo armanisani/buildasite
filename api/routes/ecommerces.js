@@ -8,9 +8,9 @@ ecommerceRouter.route('/')
   .post(ecommerceCtrl.create)
 
 ecommerceRouter.route('/:id')
-  .get(websiteCtrl.show)
-  .delete(websiteCtrl.destroy)
-  .patch(websiteCtrl.update)
+  .get(ecommerceCtrl.show)
+  .delete(ecommerceCtrl.destroy)
+  .patch(ecommerceCtrl.update)
 
 
 module.exports = ecommerceRouter

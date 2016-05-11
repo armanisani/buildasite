@@ -12,7 +12,10 @@ var
   config = require('./api/config/config'),
   jwt = require('jsonwebtoken'),
   userRoutes = require('./api/routes/users.js'),
-  websiteRoutes = require('./api/routes/websites.js')
+  socialRoutes = require('./api/routes/socials.js'),
+  singleRoutes = require('./api/routes/singles.js'),
+  mobileRoutes = require('./api/routes/mobiles.js'),
+  ecommerceRoutes = require('./api/routes/ecommerces.js')
 
 
 // middeware
