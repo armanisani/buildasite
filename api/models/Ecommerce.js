@@ -2,7 +2,7 @@ var
   mongoose = require('mongose')
 
 
-var eccommerceSchema = mongoose.Schema({
+var ecommerceSchema = mongoose.Schema({
   title: {type: String, required: true},
   product: {type: String, required: true},
   color: {type: String, required: true},
@@ -16,7 +16,7 @@ var eccommerceSchema = mongoose.Schema({
 
 
 
-var Eccommerce = mongoose.model('Eccommerce', eccommerceSchema)
+var Ecommerce = mongoose.model('Eccommerce', ecommerceSchema)
 
 
-module.exports = Eccommerce
+module.exports = Ecommerce

@@ -10,10 +10,10 @@ module.exports = {
     })
   },
   show: function(req,res){
-    Website.findOne({_id: req.params.id}).exec(function(req,res){
+    Website.findOne({_id: req.params.id}).exec(function(err, web){
       if(err) console.log(err);
-      console.log(user);
-      res.json(user)
+      console.log(web);
+      res.json(web)
     })
   },
   destroy: function(req,res){
@@ -21,7 +21,7 @@ module.exports = {
       if(err) throw err
       Website.remove({_id: req.params.id}, function(err){
         if(err) throw err
-        res.json(user)
+        res.json(web)
       })
     })
   },
