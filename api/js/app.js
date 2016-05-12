@@ -7,12 +7,17 @@ angular.module('buildasite', ['buildasite.controllers', 'buildasite.services'])
   .state('home', {
     url: '/',
     templateUrl: 'public/index.html',
-    controller: 'MainController as main'
+    controller: 'MainCtrl as main'
   })
   .state('profile', {
     url: '/profile/:id',
     templateUrl: 'public/profile.html',
     controller: 'ProfileCtrl as profile'
+  })
+  .state('buildasite', {
+    url: '/build',
+    templateUrl: 'public/build.html',
+    controller: 'BuildCtrl as bc'
   })
   .state('websites', {
     url: '/websites',
@@ -23,10 +28,6 @@ angular.module('buildasite', ['buildasite.controllers', 'buildasite.services'])
     url: '/websites/ecommerce/:id',
     templateUrl: 'public/ecommerceDetail.html',
     controller: 'EcommerceDetailCtrl as ec'
-  })
-  .state('ecommereceBuild', {
-    url: '/build/ecommerce/:id',
-    templateUrl: 'public'
   })
   .state('mobileDetail', {
     url: '/websites/mobile/:id',
