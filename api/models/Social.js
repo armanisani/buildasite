@@ -3,6 +3,7 @@ var
 
 
 var socialSchema = mongoose.Schema({
+  _creator: {type: mongoose.Schema.Types.ObjectId, ref: "User"},
   title: {type: String, required: true},
   color: {type: String, required: true},
   profile: {type: String, required: true},

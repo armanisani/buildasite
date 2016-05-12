@@ -3,6 +3,7 @@ var
 
 
 var ecommerceSchema = mongoose.Schema({
+  _creator: {type: mongoose.Schema.Types.ObjectId, ref: "User"},
   title: {type: String, required: true},
   product: {type: String, required: true},
   color: {type: String, required: true},

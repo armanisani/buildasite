@@ -3,6 +3,7 @@ var
 
 
 var mobileSchema = mongoose.Schema({
+  _creator: {type: mongoose.Schema.Types.ObjectId, ref: "User"},
   title: {type: String, required: true},
   phoneType: {type: String, required: true},
   tabs: {type: Number, required: true},
