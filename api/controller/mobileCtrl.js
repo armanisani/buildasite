@@ -29,12 +29,13 @@ module.exports = {
     Mobile.findOne({_id: req.params.id}).exec(function(err,mobile){
       if(err) throw err
       mobile.title = req.body.title
-      phoneType.title = req.body.title
-      tabs.title = req.body.tabs
-      type.title = req.body.type
-      color.title = req.body.color
-      description.title = req.body.description
-      additionalInfo.title = req.body.additionalInfo
+      mobile.phoneType= req.body.phoneType
+      mobile.tabs = req.body.tabs
+      mobile.type = req.body.type
+      mobile.color = req.body.color
+      mobile.style = req.body.style
+      mobile.description = req.body.description
+      mobile.additionalInfo = req.body.additionalInfo
     })
   },
   create: function(req,res) {

@@ -32,6 +32,7 @@ module.exports = {
       ecom.description = req.body.description
       ecom.product = req.body.product
       ecom.color = req.body.color
+      ecom.style = req.body.style
       ecom.pages = req.body.pages
       ecom.company = req.body.company
       ecom.onlinePayments = req.body.onlinePayments

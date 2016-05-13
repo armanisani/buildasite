@@ -32,6 +32,7 @@ module.exports = {
       single.business = req.body.business
       single.pages = req.body.pages
       single.color = req.body.color
+      single.style = req.body.style
       single.description = req.body.description
       single.additionalInfo = req.body.additionalInfo
     })
