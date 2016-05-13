@@ -9,6 +9,7 @@ var singleSchema = mongoose.Schema({
   business: {type: Boolean, required: true},
   pages: {type: Number, required: true},
   color: {type: String, required: true},
+  style: {type: String, required: true},
   description: {type: String, required: true},
   additionalInfo: String
 })
