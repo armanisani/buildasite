@@ -33,6 +33,7 @@ module.exports = {
       ecom.product = req.body.product
       ecom.color = req.body.color
       ecom.style = req.body.style
+      ecom.users = req.body.users
       ecom.pages = req.body.pages
       ecom.company = req.body.company
       ecom.onlinePayments = req.body.onlinePayments

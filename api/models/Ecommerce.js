@@ -9,6 +9,7 @@ var ecommerceSchema = mongoose.Schema({
   color: {type: String, required: true},
   style: {type: String, required: true},
   pages: {type: Number, required: true},
+  users: String,
   company: String,
   onlinePayments: {type: String, required: true},
   description: {type: String, required: true},
