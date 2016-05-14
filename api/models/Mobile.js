@@ -8,6 +8,7 @@ var mobileSchema = mongoose.Schema({
   phoneType: {type: String, required: true},
   tabs: {type: Number, required: true},
   type: {type: String, required: true},
+  other: String,
   color: {type: String, required: true},
   style: {type: String, required: true},
   description: {type: String, required: true},
