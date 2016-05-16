@@ -232,6 +232,10 @@ hr.small {
     }
 }
 
+#buildchoice {
+  margin: 100px
+}
+
 /* Footer */
 
 footer {
