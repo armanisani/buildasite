@@ -4,7 +4,8 @@ var rootPath = path.normalize(__dirname + '/../');
 module.exports = {
   development: {
     db: 'mongodb://localhost/build-a-site',
-    port: 8000
+    port: 8000,
+    secret: 'buildabear'
   },
   rootPath: rootPath
 }

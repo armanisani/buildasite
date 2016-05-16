@@ -48,7 +48,71 @@
             </li>
         </ul>
     </nav>
-
+    <section id="buildchoice">
+    <div class="container">
+      <div class="container">
+          <div class="row text-center">
+              <div class="col-lg-10 col-lg-offset-1">
+                  <h2>Build time!</h2>
+                  <hr class="small">
+                  <div class="row">
+                      <div class="col-md-3 col-sm-6">
+                          <div class="service-item">
+                              <span id="singleball" class="ball fa-stack fa-4x">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-user fa-stack-1x text-primary"></i>
+                          </span>
+                              <h4>
+                                  <strong>Personal or Business</strong>
+                              </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                          </div>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                          <div class="service-item">
+                              <span id="socialball" class="ball fa-stack fa-4x">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-commenting fa-stack-1x text-primary"></i>
+                          </span>
+                              <h4>
+                                  <strong>Social Media</strong>
+                              </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                          </div>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                          <div class="service-item">
+                              <span id="ecommerceball" class="ball fa-stack fa-4x">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-money fa-stack-1x text-primary"></i>
+                          </span>
+                              <h4>
+                                  <strong>Ecommerce</strong>
+                              </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                          </div>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                          <div class="service-item">
+                              <span id="mobileball" class="ball fa-stack fa-4x">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-mobile fa-stack-1x text-primary"></i>
+                          </span>
+                              <h4>
+                                  <strong>Mobile</strong>
+                              </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- /.row (nested) -->
+              </div>
+              <!-- /.col-lg-10 -->
+          </div>
+          <!-- /.row -->
+      </div>
+    </div>
+  </section>
 
 <!-- //////////////////////////////////////////////////////  Personal /////////////////////////////////////////// -->
 <section id="personal" class="hide">
@@ -216,7 +280,7 @@
 
 </section>
 <!-- //////////////////////////////////////////////////////  Ecommerce /////////////////////////////////////////// -->
-<section id="Ecommerce" class="hide">
+<section id="ecommerce" class="hide">
   <div class="container">
     <h1>Ecommerce</h1>
     <form>
@@ -304,7 +368,7 @@
 
 </section>
 <!-- //////////////////////////////////////////////////////  Mobile /////////////////////////////////////////// -->
-<section id="Mobile" class="hide">
+<section id="mobile" class="hide">
   <div class="container">
     <h1>Mobile</h1>
     <form>
@@ -442,6 +506,24 @@
 
   <!-- Custom Theme JavaScript -->
   <script>
+  // adds a hover effect to all the icons
+  $(".ball").hover(
+    function(){
+      $(this).toggleClass('fa-5x')
+    })
+    // puts a clicker on the build icons so when its clicked it will bring up its uild page
+    function buildstep(click, remove) {
+      $(click).click(function(){
+        $(remove).removeClass('hide')
+        $("#buildchoice").addClass('hide')
+      })
+    }
+    // calls the clicker on all icons
+    buildstep('#singleball', '#personal')
+    buildstep('#socialball', '#social-media')
+    buildstep('#ecommerceball', '#ecommerce')
+    buildstep('#mobileball', '#mobile')
+
   // Closes the sidebar menu
   $("#menu-close").click(function(e) {
       e.preventDefault();

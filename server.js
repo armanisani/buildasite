@@ -17,6 +17,7 @@ var
   mobileRoutes = require('./api/routes/mobiles.js'),
   ecommerceRoutes = require('./api/routes/ecommerces.js')
 
+  var secret = process.env.secret || config.development.secret
 
 // middeware
 app.use(logger('dev'))
@@ -24,7 +25,7 @@ app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static(path.join(__dirname, './public')))
 app.use(bodyParser.json())
-app.use(session({ secret: 'buildabear'}))
+app.use(session({ secret: secret}))
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(express.static('./public'))
@@ -42,8 +43,17 @@ app.use(function (req,res,next){
     return next()
   }
 })
-
-
+app.use('/users', userRoutes)
+app.use('/social', socialRoutes)
+app.use('/single', singleRoutes)
+app.use('/mobile', mobileRoutes)
+app.use('/ecommerce', ecommerceRoutes)
+app.get('/', function(req,res){
+  res.sendFile(__dirname, './index.html')
+})
+app.get('/build', function(req,res){
+  res.sendFile(path.join(__dirname, './public', 'build.html'))
+})
 
 // Redirect Links
 
