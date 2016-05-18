@@ -7,9 +7,9 @@ var userSchema = mongoose.Schema({
   first: {type: String, required: true},
   last: {type: String, required: true},
   phone: {type: String, required: true},
+  email: {type: String, required: true},
   currentSite: String,
-  livingStatus: {type: String, required: true},
-  country: {type: String, required: true},
+  livingStatus: String,
   username: {type: String, unique: true, required: true},
   password: {type: String, required: true},
   mobile: [{type: mongoose.Schema.Types.ObjectId, ref: "Mobile"}],
@@ -20,7 +20,7 @@ var userSchema = mongoose.Schema({
   twitter: String,
   linkedin: String,
   google: String,
-  youtube: String
+  hear: {type: String, required: true}
 })
 
 
