@@ -21,7 +21,116 @@
   </head>
 
 
-  <body>
+  <body ng-app="buildasite">
+    <!-- signin Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+          </div>
+          <div class="modal-body">
+              <div class="container">
+                <form>
+              <fieldset class="form-group">
+                <label class="item-input-wraper"for="exampleInputTitle1">Username</label>
+                <input ng-model="main.loginUser.username" type="text" placeholder="Username">
+              </fieldset>
+              <fieldset class="form-group">
+                <label class="item-input-wraper"for="exampleInputTitle1">Password</label>
+                <input ng-model="main.loginUser.password" type="password" placeholder="Password">
+              </fieldset>
+            </form>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button  ng-click="main.login()" type="submit" id="personalbutton"class="btn btn-primary">Login</button>
+            <button  data-toggle="modal" data-target="#myModalsignup" type="submit" id="personalbutton"class="btn btn-primary">Signup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- signup modal -->
+    <div class="modal fade" id="myModalsignup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Sign up</h4>
+          </div>
+          <div class="modal-body">
+                <form>
+              <fieldset class="form-group">
+                <label class="item-input-wraper"for="exampleInputTitle1">First Name</label>
+                <input type="first" class="form-control" id="first-signup" placeholder="John">
+              </fieldset>
+              <fieldset class="form-group">
+                <label class="item-input-wraper"for="exampleInputTitle1">Last Name</label>
+                <input type="last" class="form-control" id="last-signup" placeholder="Smith">
+              </fieldset>
+              <fieldset class="form-group">
+                <label class="item-input-wraper"for="exampleInputTitle1">Phone</label>
+                <input type="tel" class="form-control" id="phone-signup" placeholder="(999)999-9999">
+              </fieldset>
+              <fieldset class="form-group">
+                <label class="item-input-wraper"for="exampleInputTitle1">Email</label>
+                <input type="email" class="form-control" id="email-signup" placeholder="johnsmith@yahoo.com">
+              </fieldset>
+              <fieldset class="form-group">
+                <label class="item-input-wraper"for="exampleInputTitle1">Current Site</label>
+                <input type="tel" class="form-control" id="currentSite-signup" placeholder="www.freshprince.com">
+                <small class=text-muted>Leave blank if you don't have one yet</small>
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="exampleSelect1">Current Living Status</label>
+                <textarea type="" class="form-control" id="livingStatus-single" rows="2"value="" placeholder="I own my own business that I primarly run from home. I travel a lot internationally to europe."></textarea>
+                <small class="text-muted">Career, where you're currently living, if your job requires you to travel a lot etc. You can leave this blank</small>
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="exampleSelect1">How did you hear about us?</label>
+                <textarea type="" class="form-control" id="hear-single" rows="2"value="" placeholder="A friend of mine told me about you guys"></textarea>
+              </fieldset>
+              <fieldset class="form-group">
+                <label class="item-input-wraper"for="exampleInputTitle1">Username</label>
+                <input type="" class="form-control" id="username-signup" placeholder="johnsmith101">
+              </fieldset>
+              <fieldset class="form-group">
+                <label class="item-input-wraper"for="exampleInputTitle1">Password</label>
+                <input type="" class="form-control" id="password-signup" placeholder="">
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="exampleTextarea">Contact Method</label>
+                <textarea class="form-control" id="description-single" placeholder="Please email me or call me around 5pm on wednesday and thursdays" rows="2"></textarea>
+              </fieldset>
+              <fieldset class="form-group">
+                <label class="item-input-wraper"for="exampleInputTitle1">Twitter</label>
+                <input type="" class="form-control" id="twitter-signup" placeholder="">
+                <small class="text-muted">Leave blank if you dont have one</small>
+              </fieldset>
+              <fieldset class="form-group">
+                <label class="item-input-wraper"for="exampleInputTitle1">Linkedin</label>
+                <input type="" class="form-control" id="linkedin-signup" placeholder="">
+                <small class="text-muted">Leave blank if you dont have one</small>
+              </fieldset>
+              <fieldset class="form-group">
+                <label class="item-input-wraper"for="exampleInputTitle1">Google</label>
+                <input type="" class="form-control" id="google-signup" placeholder="">
+                <small class="text-muted">Leave blank if you dont have one</small>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Signup!</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Navigation -->
     <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
@@ -35,7 +144,7 @@
                 <a href="/" onclick = $("#menu-close").click(); >Home</a>
             </li>
             <li>
-                <a href="/signup" onclick = $("#menu-close").click(); >Sign-in/Sign-out</a>
+                <a data-toggle="modal" data-target="#myModal" href="#" onclick = $("#menu-close").click(); >Signin/Signout</a>
             </li>
             <li>
                 <a href="/build" onclick = $("#menu-close").click(); >Build!</a>
@@ -218,35 +327,6 @@
     <textarea class="form-control" id="additionalInfo-single" placeholder="I'm also attaching a folder of photos via email, that i want you to include into the site, you can decide where based on your best judgement. " rows="3"></textarea>
     <small class="text-muted">Include any additional info here</small>
   </fieldset>
-  <!-- <fieldset class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" class="form-control-file" id="exampleInputFile">
-    <small class="text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-  </fieldset> -->
-<!--
-  <div class="radio">
-    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-      Option one is this and that&mdash;be sure to include why it's great
-    </label>
-  </div>
-  <div class="radio">
-    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-      Option two can be something else and selecting it will deselect option one
-    </label>
-  </div>
-  <div class="radio disabled">
-    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-      Option three is disabled
-    </label>
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
-  </div> -->
   <p>
     Press submit to send this to one of our developers who will contact you shortly to discuss what you want built, and to give you a price estimate.
   </p>
@@ -306,37 +386,6 @@
     <label for="exampleTextarea">Additional Info</label>
     <textarea class="form-control" id="additionalInfo-single" placeholder="I'm also attaching a folder of photos via email, that i want you to include into the site, you can decide where based on your best judgement. " rows="3"></textarea>
     <small class="text-muted">Include any additional info here</small>
-  </fieldset>
-  <!-- <fieldset class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" class="form-control-file" id="exampleInputFile">
-    <small class="text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-  </fieldset> -->
-<!--
-  <div class="radio">
-    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-      Option one is this and that&mdash;be sure to include why it's great
-    </label>
-  </div>
-  <div class="radio">
-    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-      Option two can be something else and selecting it will deselect option one
-    </label>
-  </div>
-  <div class="radio disabled">
-    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-      Option three is disabled
-    </label>
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
-  </div> -->
-  <p>
     Press submit to send this to one of our developers who will contact you shortly to discuss what you want built, and to give you a price estimate.
   </p>
   <button type="submit" id="ecommerce button"class="btn btn-primary">Submit</button>
@@ -405,35 +454,6 @@
     <textarea class="form-control" id="additionalInfo-single" placeholder="I'm also attaching a folder of photos via email, that i want you to include into the site, you can decide where based on your best judgement. " rows="3"></textarea>
     <small class="text-muted">Include any additional info here</small>
   </fieldset>
-  <!-- <fieldset class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" class="form-control-file" id="exampleInputFile">
-    <small class="text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-  </fieldset> -->
-<!--
-  <div class="radio">
-    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-      Option one is this and that&mdash;be sure to include why it's great
-    </label>
-  </div>
-  <div class="radio">
-    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-      Option two can be something else and selecting it will deselect option one
-    </label>
-  </div>
-  <div class="radio disabled">
-    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-      Option three is disabled
-    </label>
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
-  </div> -->
   <p>
     Press submit to send this to one of our developers who will contact you shortly to discuss what you want built, and to give you a price estimate.
   </p>
@@ -444,7 +464,7 @@
 
 </section>
 
-<aside class="callout">
+<aside style="margin-top: 50px"class="callout">
     <div class="text-vertical-center">
         <h1>Vertically Centered Text</h1>
     </div>
@@ -462,17 +482,6 @@
                         </li>
                     </ul>
                     <br>
-                    <!-- <ul class="list-inline">
-                        <li>
-                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
-                        </li>
-                    </ul> -->
                     <hr class="small">
                     <p class="text-muted">Copyright &copy; Build a Site Workshop 2017</p>
                 </div>
