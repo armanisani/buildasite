@@ -1,8 +1,9 @@
 angular.module('buildasite.controllers', [])
   .controller('MainCtrl', MainCtrl)
   .factory('authInterceptor', authInterceptor)
-  // .service('user', userService)
-  // .service('auth', authService)
+  .service('user', userService)
+  .service('auth', authService)
+  .constant('API', 'http://localhost:8000/')
   .controller('ProfileCtrl', ProfileCtrl)
   .controller('BuildCtrl', BuildCtrl)
   .controller('WebsiteCtrl', WebsiteCtrl)
@@ -12,9 +13,9 @@ angular.module('buildasite.controllers', [])
   .controller('SocialDetailCtrl', SocialDetailCtrl)
   .controller('MobileDetailCtrl', MobileDetailCtrl)
 
-MainCtrl.$inject = ["$stateParams", "$rootScope", "$state", "auth", "user", "$window"]
+MainCtrl.$inject = ["$stateParams", "$state", "auth", "user", "$window"]
 
-  function MainCtrl($stateParams, $rootScope, $state, auth, user, $window){
+  function MainCtrl($stateParams, $state, auth, user, $window){
     var vm = this
     vm.currentUserId = ""
     vm.newUser = {}
@@ -103,6 +104,26 @@ MainCtrl.$inject = ["$stateParams", "$rootScope", "$state", "auth", "user", "$wi
         $window.localStorage.removeItem('cID');
       }
     }
+    function userService($http, API, auth) {
+    var vm = this;
+    vm.getQuote = function() {
+      return $http.get(API + '/api/auth/quote')
+    }
+
+    vm.login = function(username, password) {
+      return $http.post(API + '/authenticate', {
+          username: username,
+          password: password
+        })
+    }
+    vm.register = function(username, password, email){
+      return $http.post(API, {
+        username: username,
+        password: password,
+        email: email
+      })
+    }
+}
 
   function ProfileCtrl(){}
 
