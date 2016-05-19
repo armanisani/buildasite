@@ -31,7 +31,7 @@
 </head>
 
 <body ng-app="buildasite" ng-controller="MainCtrl">
-<!-- signin Modal -->
+      <!-- signin Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -76,66 +76,66 @@
             <form>
           <fieldset class="form-group">
             <label class="item-input-wraper"for="exampleInputTitle1">First Name</label>
-            <input type="first" class="form-control" id="first-signup" placeholder="John">
+            <input ng-model="main.newUser.first"type="first" class="form-control" id="first-signup" placeholder="John">
           </fieldset>
           <fieldset class="form-group">
             <label class="item-input-wraper"for="exampleInputTitle1">Last Name</label>
-            <input type="last" class="form-control" id="last-signup" placeholder="Smith">
+            <input ng-model="main.newUser.last"type="last" class="form-control" id="last-signup" placeholder="Smith">
           </fieldset>
           <fieldset class="form-group">
             <label class="item-input-wraper"for="exampleInputTitle1">Phone</label>
-            <input type="tel" class="form-control" id="phone-signup" placeholder="(999)999-9999">
+            <input ng-model="main.newUser.phone"type="tel" class="form-control" id="phone-signup" placeholder="(999)999-9999">
           </fieldset>
           <fieldset class="form-group">
             <label class="item-input-wraper"for="exampleInputTitle1">Email</label>
-            <input type="email" class="form-control" id="email-signup" placeholder="johnsmith@yahoo.com">
+            <input ng-model="main.newUser.email" type="email" class="form-control" id="email-signup" placeholder="johnsmith@yahoo.com">
           </fieldset>
           <fieldset class="form-group">
             <label class="item-input-wraper"for="exampleInputTitle1">Current Site</label>
-            <input type="tel" class="form-control" id="currentSite-signup" placeholder="www.freshprince.com">
+            <input ng-model="main.newUser.currentSite" type="tel" class="form-control" id="currentSite-signup" placeholder="www.freshprince.com">
             <small class=text-muted>Leave blank if you don't have one yet</small>
           </fieldset>
           <fieldset class="form-group">
             <label for="exampleSelect1">Current Living Status</label>
-            <textarea type="" class="form-control" id="livingStatus-single" rows="2"value="" placeholder="I own my own business that I primarly run from home. I travel a lot internationally to europe."></textarea>
+            <textarea ng-model="main.newUser.livingStatus" type="" class="form-control" id="livingStatus-single" rows="2"value="" placeholder="I own my own business that I primarly run from home. I travel a lot internationally to europe."></textarea>
             <small class="text-muted">Career, where you're currently living, if your job requires you to travel a lot etc. You can leave this blank</small>
           </fieldset>
           <fieldset class="form-group">
             <label for="exampleSelect1">How did you hear about us?</label>
-            <textarea type="" class="form-control" id="hear-single" rows="2"value="" placeholder="A friend of mine told me about you guys"></textarea>
+            <textarea ng-model="main.newUser.hear"type="" class="form-control" id="hear-single" rows="2"value="" placeholder="A friend of mine told me about you guys"></textarea>
           </fieldset>
           <fieldset class="form-group">
             <label class="item-input-wraper"for="exampleInputTitle1">Username</label>
-            <input type="" class="form-control" id="username-signup" placeholder="johnsmith101">
+            <input ng-model="main.newUser.username"type="" class="form-control" id="username-signup" placeholder="johnsmith101">
           </fieldset>
           <fieldset class="form-group">
             <label class="item-input-wraper"for="exampleInputTitle1">Password</label>
-            <input type="" class="form-control" id="password-signup" placeholder="">
+            <input ng-model="main.newUser.password" type="password" class="form-control" id="password-signup" placeholder="">
           </fieldset>
           <fieldset class="form-group">
             <label for="exampleTextarea">Contact Method</label>
-            <textarea class="form-control" id="description-single" placeholder="Please email me or call me around 5pm on wednesday and thursdays" rows="2"></textarea>
+            <textarea ng-model="main.newUser.contactMethod"class="form-control" id="description-single" placeholder="Please email me or call me around 5pm on wednesday and thursdays" rows="2"></textarea>
           </fieldset>
           <fieldset class="form-group">
             <label class="item-input-wraper"for="exampleInputTitle1">Twitter</label>
-            <input type="" class="form-control" id="twitter-signup" placeholder="">
+            <input ng-model="main.newUser.twitter"type="" class="form-control" id="twitter-signup" placeholder="">
             <small class="text-muted">Leave blank if you dont have one</small>
           </fieldset>
           <fieldset class="form-group">
             <label class="item-input-wraper"for="exampleInputTitle1">Linkedin</label>
-            <input type="" class="form-control" id="linkedin-signup" placeholder="">
+            <input ng-model="main.newUser.linkedin"type="" class="form-control" id="linkedin-signup" placeholder="">
             <small class="text-muted">Leave blank if you dont have one</small>
           </fieldset>
           <fieldset class="form-group">
             <label class="item-input-wraper"for="exampleInputTitle1">Google</label>
-            <input type="" class="form-control" id="google-signup" placeholder="">
+            <input ng-model="main.newUser.google"type="" class="form-control" id="google-signup" placeholder="">
             <small class="text-muted">Leave blank if you dont have one</small>
           </fieldset>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Signup!</button>
+        <button type="button" ng-click="main.register()" class="btn btn-primary">Signup!</button>
       </div>
     </div>
   </div>
@@ -356,7 +356,13 @@
             </div>
         </div>
     </footer>
-
+    <!-- angular -->
+    <script src="js/angular.js"></script>
+    <!-- angular js stuff -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    </script>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
