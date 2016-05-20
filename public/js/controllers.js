@@ -74,7 +74,7 @@ MainCtrl.$inject = ["$stateParams", "$state", "auth", "user", "$window"]
            }
         }
       }
-
+      console.log(process.env.secret);
       function authService($window) {
         console.log("Auth service is running");
       var vm = this

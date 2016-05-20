@@ -53,7 +53,7 @@ module.exports = {
      newUser.password = newUser.generateHash(req.body.password)
      newUser.save(function(err, user){
        if(err) throw err
-       var token = jwt.sign(user.toObject(), development.secret.toString(), {
+       var token = jwt.sign(user.toObject(), process.env.secret.toString(), {
          expiresIn: 6000
        })
        res.json({message: 'user created and here is token', user:user})

@@ -15,7 +15,8 @@ var
   socialRoutes = require('./api/routes/socials.js'),
   singleRoutes = require('./api/routes/singles.js'),
   mobileRoutes = require('./api/routes/mobiles.js'),
-  ecommerceRoutes = require('./api/routes/ecommerces.js')
+  ecommerceRoutes = require('./api/routes/ecommerces.js'),
+  dotenv = require('dotenv').config({path: '/.env'})
 
   var secret = process.env.secret || config.development.secret
 
@@ -43,6 +44,9 @@ app.use(function (req,res,next){
     return next()
   }
 })
+console.log(process.env.secret);
+app.set('superSecret', process.env.secret)
+
 app.use('/users', userRoutes)
 app.use('/social', socialRoutes)
 app.use('/single', singleRoutes)
