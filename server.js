@@ -54,9 +54,7 @@ app.get('/', function(req,res){
 app.get('/build', function(req,res){
   res.sendFile(path.join(__dirname, './public', 'build.html'))
 })
-app.get('/signup', function(req,res){
-  res.sendFile(path.join(__dirname, './public', 'signup.html'))
-})
+
 
 // Redirect Links
 

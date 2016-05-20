@@ -3,7 +3,7 @@ angular.module('buildasite.controllers', [])
   .factory('authInterceptor', authInterceptor)
   .service('user', userService)
   .service('auth', authService)
-  .constant('API', 'http://localhost:8000/')
+  .constant('API', 'http://localhost:8000/users')
   .controller('ProfileCtrl', ProfileCtrl)
   .controller('BuildCtrl', BuildCtrl)
   .controller('WebsiteCtrl', WebsiteCtrl)
@@ -16,6 +16,7 @@ angular.module('buildasite.controllers', [])
 MainCtrl.$inject = ["$stateParams", "$state", "auth", "user", "$window"]
 
   function MainCtrl($stateParams, $state, auth, user, $window){
+    console.log("Main ctrl is running");
     var vm = this
     vm.currentUserId = ""
     vm.newUser = {}
@@ -38,7 +39,8 @@ MainCtrl.$inject = ["$stateParams", "$state", "auth", "user", "$window"]
     .then(handleRequest, handleRequest)
   }
   vm.register = function() {
-    user.register(vm.newUser.first, vm.newUser.last, vm.newUser.phone, vm.newUser.email, vm.newUser.currentSite, vm.newUser.livingStatus, vm.newUser.username, vm.newUser.password, vm.newUser.mobile, vm.newUser.contactMethod, vm.newUser.twitter, vm.newUser.linkedin, vm.newUser.google, vm.newUser.hear )
+    console.log("registered user");
+    user.register(vm.newUser.first, vm.newUser.last, vm.newUser.phone, vm.newUser.email, vm.newUser.currentSite, vm.newUser.livingStatus, vm.newUser.username, vm.newUser.password, vm.newUser.contactMethod, vm.newUser.twitter, vm.newUser.linkedin, vm.newUser.google, vm.newUser.hear )
       .then(handleRequest, handleRequest)
   }
   vm.getQuote = function() {
@@ -74,6 +76,7 @@ MainCtrl.$inject = ["$stateParams", "$state", "auth", "user", "$window"]
       }
 
       function authService($window) {
+        console.log("Auth service is running");
       var vm = this
       vm.parseJwt = function(token) {
         var base64Url = token.split('.')[1]
@@ -105,6 +108,7 @@ MainCtrl.$inject = ["$stateParams", "$state", "auth", "user", "$window"]
       }
     }
     function userService($http, API, auth) {
+      console.log("User service is running");
     var vm = this;
     vm.getQuote = function() {
       return $http.get(API + '/api/auth/quote')
@@ -116,16 +120,28 @@ MainCtrl.$inject = ["$stateParams", "$state", "auth", "user", "$window"]
           password: password
         })
     }
-    vm.register = function(username, password, email){
+    vm.register = function(first, last, phone, email, currentSite, livingStatus, username, password, contactMethod, twitter, linkedin, google, hear){
+      console.log("second register");
       return $http.post(API, {
+        first: first,
+        phone: phone,
+        email: email,
+        currentSite: currentSite,
+        livingStatus: livingStatus,
         username: username,
         password: password,
-        email: email
+        contactMethod: contactMethod,
+        twitter: twitter,
+        linkedin: linkedin,
+        google: google,
+        hear: hear
       })
     }
 }
 
-  function ProfileCtrl(){}
+  function ProfileCtrl(){
+    console.log("profile ctrl is running");
+  }
 
   function BuildCtrl(){}
 

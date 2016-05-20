@@ -5,8 +5,8 @@ angular.module('buildasite.services', [])
 .factory('ecommerceService', ecommerceService)
 .factory('singleService', singleService)
 
-var url = 'http://localhost:8000/'
 function userService($http){
+  var url = 'http://localhost:8000/users'
   var service = {
     index: index,
     show: show,
@@ -23,16 +23,18 @@ function userService($http){
     return $http.get(url + id)
   }
   function create(data){
-    return $http.post(url, data)
+    console.log("user has been created");
+    return $http.post('http://localhost:8000/users', data)
   }
   function update(id, data){
-    return $http.patch(apiUrl + id, data)
+    return $http.patch(url + id, data)
   }
   function destroy(id){
-    return $http.delete(apiUrl + id)
+    return $http.delete(url + id)
   }
 }
 function socialService($http){
+  var url = 'http://localhost:8000/social'
   var service = {
     index: index,
     show: show,
@@ -52,13 +54,14 @@ function socialService($http){
     return $http.post(url, data)
   }
   function update(id, data){
-    return $http.patch(apiUrl + id, data)
+    return $http.patch(url + id, data)
   }
   function destroy(id){
-    return $http.delete(apiUrl + id)
+    return $http.delete(url + id)
   }
 }
 function mobileService($http){
+  var url = 'http://localhost:8000/mobile'
   var service = {
     index: index,
     show: show,
@@ -78,13 +81,14 @@ function mobileService($http){
     return $http.post(url, data)
   }
   function update(id, data){
-    return $http.patch(apiUrl + id, data)
+    return $http.patch(url + id, data)
   }
   function destroy(id){
-    return $http.delete(apiUrl + id)
+    return $http.delete(url + id)
   }
 }
 function ecommerceService($http){
+  var url = 'http://localhost:8000/ecommerce'
   var service = {
     index: index,
     show: show,
@@ -104,13 +108,14 @@ function ecommerceService($http){
     return $http.post(url, data)
   }
   function update(id, data){
-    return $http.patch(apiUrl + id, data)
+    return $http.patch(url + id, data)
   }
   function destroy(id){
-    return $http.delete(apiUrl + id)
+    return $http.delete(url + id)
   }
 }
 function singleService($http){
+  var url = 'http://localhost:8000/single'
   var service = {
     index: index,
     show: show,
@@ -130,9 +135,9 @@ function singleService($http){
     return $http.post(url, data)
   }
   function update(id, data){
-    return $http.patch(apiUrl + id, data)
+    return $http.patch(url + id, data)
   }
   function destroy(id){
-    return $http.delete(apiUrl + id)
+    return $http.delete(url + id)
   }
 }

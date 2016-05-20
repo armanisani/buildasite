@@ -30,7 +30,7 @@
 
 </head>
 
-<body ng-app="buildasite" ng-controller="MainCtrl">
+<body ng-app="buildasite" ng-controller="MainCtrl as main">
       <!-- signin Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -97,16 +97,16 @@
           </fieldset>
           <fieldset class="form-group">
             <label for="exampleSelect1">Current Living Status</label>
-            <textarea ng-model="main.newUser.livingStatus" type="" class="form-control" id="livingStatus-single" rows="2"value="" placeholder="I own my own business that I primarly run from home. I travel a lot internationally to europe."></textarea>
+            <textarea ng-model="main.newUser.livingStatus" type="text" class="form-control" id="livingStatus-single" rows="2"value="" placeholder="I own my own business that I primarly run from home. I travel a lot internationally to europe."></textarea>
             <small class="text-muted">Career, where you're currently living, if your job requires you to travel a lot etc. You can leave this blank</small>
           </fieldset>
           <fieldset class="form-group">
             <label for="exampleSelect1">How did you hear about us?</label>
-            <textarea ng-model="main.newUser.hear"type="" class="form-control" id="hear-single" rows="2"value="" placeholder="A friend of mine told me about you guys"></textarea>
+            <textarea ng-model="main.newUser.hear"type="text" class="form-control" id="hear-single" rows="2"value="" placeholder="A friend of mine told me about you guys"></textarea>
           </fieldset>
           <fieldset class="form-group">
             <label class="item-input-wraper"for="exampleInputTitle1">Username</label>
-            <input ng-model="main.newUser.username"type="" class="form-control" id="username-signup" placeholder="johnsmith101">
+            <input ng-model="main.newUser.username"type="text" class="form-control" id="username-signup" placeholder="johnsmith101">
           </fieldset>
           <fieldset class="form-group">
             <label class="item-input-wraper"for="exampleInputTitle1">Password</label>
@@ -118,24 +118,26 @@
           </fieldset>
           <fieldset class="form-group">
             <label class="item-input-wraper"for="exampleInputTitle1">Twitter</label>
-            <input ng-model="main.newUser.twitter"type="" class="form-control" id="twitter-signup" placeholder="">
+            <input ng-model="main.newUser.twitter"type="text" class="form-control" id="twitter-signup" placeholder="">
             <small class="text-muted">Leave blank if you dont have one</small>
           </fieldset>
           <fieldset class="form-group">
             <label class="item-input-wraper"for="exampleInputTitle1">Linkedin</label>
-            <input ng-model="main.newUser.linkedin"type="" class="form-control" id="linkedin-signup" placeholder="">
+            <input ng-model="main.newUser.linkedin"type="text" class="form-control" id="linkedin-signup" placeholder="">
             <small class="text-muted">Leave blank if you dont have one</small>
           </fieldset>
           <fieldset class="form-group">
             <label class="item-input-wraper"for="exampleInputTitle1">Google</label>
-            <input ng-model="main.newUser.google"type="" class="form-control" id="google-signup" placeholder="">
+            <input ng-model="main.newUser.google"type="text" class="form-control" id="google-signup" placeholder="">
             <small class="text-muted">Leave blank if you dont have one</small>
           </fieldset>
-        </form>
+          <button type="button" ui-sref="home" ng-click="main.register()" class="btn btn-primary">Signup!</button>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" ng-click="main.register()" class="btn btn-primary">Signup!</button>
+      </form>
+
       </div>
     </div>
   </div>
@@ -358,6 +360,7 @@
     </footer>
     <!-- angular -->
     <script src="js/angular.js"></script>
+    <script src="js/angular-ui-router.js"></script>
     <!-- angular js stuff -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
