@@ -110,11 +110,11 @@ MainCtrl.$inject = ["$stateParams", "$state", "auth", "user", "$window"]
       console.log("User service is running");
     var vm = this;
     vm.getQuote = function() {
-      return $http.get(API + '/api/auth/quote')
+      return $http.get(API + 'api/auth/quote')
     }
 
     vm.login = function(username, password) {
-      return $http.post(API + '/authenticate', {
+      return $http.post(API + 'authenticate', {
           username: username,
           password: password
         })
