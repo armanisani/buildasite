@@ -16,10 +16,10 @@ var
   singleRoutes = require('./api/routes/singles.js'),
   mobileRoutes = require('./api/routes/mobiles.js'),
   ecommerceRoutes = require('./api/routes/ecommerces.js'),
-  dotenv = require('dotenv').config({path: '/.env'})
+  dotenv = require('dotenv').config({path: '.env'})
 
   var secret = process.env.secret || config.development.secret
-
+console.log(process.env.secret);
 // middeware
 app.use(logger('dev'))
 app.use(cookieParser())
@@ -44,7 +44,6 @@ app.use(function (req,res,next){
     return next()
   }
 })
-console.log(process.env.secret);
 app.set('superSecret', process.env.secret)
 
 app.use('/users', userRoutes)
