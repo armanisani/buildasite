@@ -3,7 +3,7 @@ angular.module('buildasite.controllers', [])
   .factory('authInterceptor', authInterceptor)
   .service('user', userService)
   .service('auth', authService)
-  .constant('API', 'http://localhost:8000/users')
+  .constant('API', 'http://localhost:8000/')
   .controller('ProfileCtrl', ProfileCtrl)
   .controller('BuildCtrl', BuildCtrl)
   .controller('WebsiteCtrl', WebsiteCtrl)
@@ -121,8 +121,10 @@ MainCtrl.$inject = ["$stateParams", "$state", "auth", "user", "$window"]
     }
     vm.register = function(first, last, phone, email, currentSite, livingStatus, username, password, contactMethod, twitter, linkedin, google, hear){
       console.log("second register");
+
       return $http.post(API, {
         first: first,
+        last: last,
         phone: phone,
         email: email,
         currentSite: currentSite,

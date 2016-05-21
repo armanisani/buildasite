@@ -52,8 +52,17 @@ module.exports = {
      var newUser = new User(req.body)
      newUser.password = newUser.generateHash(req.body.password)
      newUser.save(function(err, user){
-       if(err) throw err
-       var token = jwt.sign(user.toObject(), process.env.secret.toString(), {
+       console.log(process.env.secret.toString());
+       if (err) {
+    console.log('Error Inserting New Data');
+    if (err.name == 'ValidationError') {
+        for (field in err.errors) {
+            console.log(err.errors[field].message);
+        }
+    }
+}
+  console.log(user);
+       var token = jwt.sign(newUser.toObject(), process.env.secret.toString(), {
          expiresIn: 6000
        })
        res.json({message: 'user created and here is token', user:user})

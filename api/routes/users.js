@@ -4,11 +4,12 @@ var
   userCtrl = require('../controller/userCtrl.js')
 
 userRouter.post('/authenticate', userCtrl.authenticate)
+userRouter.route('/users')
+.get(userCtrl.index)
 userRouter.route('/')
-  .get(userCtrl.index)
   .post(userCtrl.create)
 
-userRouter.route('/:id')
+userRouter.route('/users/:id')
   .get(userCtrl.show)
   .delete(userCtrl.destroy)
   .patch(userCtrl.update)

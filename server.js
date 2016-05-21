@@ -46,7 +46,7 @@ app.use(function (req,res,next){
 })
 app.set('superSecret', process.env.secret)
 
-app.use('/users', userRoutes)
+app.use('/', userRoutes)
 app.use('/social', socialRoutes)
 app.use('/single', singleRoutes)
 app.use('/mobile', mobileRoutes)

@@ -24,7 +24,7 @@ function userService($http){
   }
   function create(data){
     console.log("user has been created");
-    return $http.post('http://localhost:8000/users', data)
+    return $http.post('http://localhost:8000/', data)
   }
   function update(id, data){
     return $http.patch(url + id, data)
