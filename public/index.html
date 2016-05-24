@@ -157,7 +157,7 @@
                 <a data-toggle="modal" data-target="#myModal" href="#" onclick = $("#menu-close").click(); >Signin/Signout</a>
             </li>
             <li>
-                <a href="/build" onclick = $("#menu-close").click(); >Build!</a>
+                <a href="#services" onclick = $("#menu-close").click(); >Build!</a>
             </li>
             <li>
                 <a href="#portfolio" onclick = $("#menu-close").click(); >Profile</a>
@@ -196,63 +196,57 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-lg-10 col-lg-offset-1">
-                    <h2>Start Building!</h2>
-                    <a href="/build" class="btn btn-light">Click me!</a>
-
-                    <!-- <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-user fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Personal or Business</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="/build" class="btn btn-light">Build</a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-commenting fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Social Media</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="/build" class="btn btn-light">Build</a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-money fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Ecommerce</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="/build.html" class="btn btn-light">Build</a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="service-item">
-                                <span class="fa-stack fa-4x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-mobile fa-stack-1x text-primary"></i>
-                            </span>
-                                <h4>
-                                    <strong>Mobile</strong>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <a href="/build.html" class="btn btn-light">Build</a>
-                            </div>
-                        </div>
-                    </div> -->
+                  <h2>Build</h2>
+                  <hr>
+                  <div class="row">
+                      <div class="col-md-3 col-sm-6">
+                          <div class="service-item">
+                              <span id="singleball" class="ball fa-stack fa-4x">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-user fa-stack-1x text-primary"></i>
+                          </span>
+                              <h4>
+                                  <strong>Personal or Business</strong>
+                              </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                          </div>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                          <div class="service-item">
+                              <span id="socialball" class="ball fa-stack fa-4x">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-commenting fa-stack-1x text-primary"></i>
+                          </span>
+                              <h4>
+                                  <strong>Social Media</strong>
+                              </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                          </div>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                          <div class="service-item">
+                              <span id="ecommerceball" class="ball fa-stack fa-4x">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-money fa-stack-1x text-primary"></i>
+                          </span>
+                              <h4>
+                                  <strong>Ecommerce</strong>
+                              </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                          </div>
+                      </div>
+                      <div class="col-md-3 col-sm-6">
+                          <div class="service-item">
+                              <span id="mobileball" class="ball fa-stack fa-4x">
+                              <i class="fa fa-circle fa-stack-2x"></i>
+                              <i class="fa fa-mobile fa-stack-1x text-primary"></i>
+                          </span>
+                              <h4>
+                                  <strong>Mobile</strong>
+                              </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                          </div>
+                      </div>
                     <!-- /.row (nested) -->
                 </div>
                 <!-- /.col-lg-10 -->
@@ -261,9 +255,243 @@
         </div>
         <!-- /.container -->
     </section>
+    <!-- //////////////////////////////////////////////////////  Personal /////////////////////////////////////////// -->
+    <section id="personal" class="hide">
+      <div class="container">
+        <h1 style="text-align: center">Personal Site</h1>
+        <hr>
+        <form>
+      <fieldset class="form-group">
+        <label class="item-input-wraper"for="exampleInputTitle1">Name of your site</label>
+        <input type="email" class="form-control" id="title-single" placeholder="Build a Site Workshop">
+        <small class="text-muted">Don't worry, this isn't permanent</small>
+      </fieldset>
+      <fieldset class="form-group">
+      <input type="radio" name="inlineRadioOptions" id="personal-single" value="option1"> Personal
+      <input type="radio" checked="checked" name="inlineRadioOptions" id="business-single" value="option2"> Business <br>
+      <small class="text-muted">Business example: lead generatation sites, real-estate, photography, mlm, etc. <br> Personal example: blogs, about me, etc </small>
+    </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleSelect1">Pages</label>
+        <input type="number" id="pages-single" value="" placeholder="7"><br>
+        <small class="text-muted">Please note every single page you'd like including front page. This can be changed later on as well</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleTextarea">Color Themes</label>
+        <textarea class="form-control" id="color-single" placeholder="I would like to have cool colors for my Build a Site Workshop. Please include tones of blue, white, and other cool colors on my site. Exact colors I want #37bfb4, rgb(61, 156, 255), Blue" rows="3"></textarea>
+        <small class="text-muted"> Examples: Dark(Black, Navy, Olive Green), Bright(Yellow, Sky Blue, Rose Red), Light(Pastels, White), Cool(Blue, Purple, Green) etc. Include exactly colors if you can</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleTextarea">Style Themes</label>
+        <textarea class="form-control" id="style-single" placeholder="I would like it really simple and clean, but to have that modern feel. I would also like a lot of images" rows="3"></textarea>
+        <small class="text-muted"> Examples: Modern, Simple, Bright & Bold</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleTextarea">Description of your site</label>
+        <textarea class="form-control" id="description-single" placeholder="I would like a site where people can signup and follow a step-by-step process of the exact website they want that gets saved and sent to me to build. The front page I would like to show a little bit about what we do, some projects that we've finished, somewhere to signup/signin, a modern side navbar, and an area where they can see what types of sites they can build. I would like users to be able to fill out an app to make a single page, ecommerce, mobile, or social media site. I also want them to be able to edit that app, and view it later on in their profile. " rows="4"></textarea>
+        <small class="text-muted">Please include every detail of the web application you want made.</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleTextarea">Additional Info</label>
+        <textarea class="form-control" id="additionalInfo-single" placeholder="I'm also attaching a folder of photos via email, that i want you to include into the site, you can decide where based on your best judgement. " rows="3"></textarea>
+        <small class="text-muted">Include any additional info here</small>
+      </fieldset>
+      <p>
+        Press submit to send this to one of our developers who will contact you shortly to discuss what you want built, and to give you a price estimate.
+      </p>
+      <button type="submit" id="personalbutton"class="btn btn-primary">Submit</button>
+    </form>
+
+      </div>
+
+    </section>
+
+    <!-- //////////////////////////////////////////////////////  Social Media /////////////////////////////////////////// -->
+    <section id="social-media" class="hide">
+      <div class="container">
+        <h1 style="text-align: center">Social Media</h1>
+        <hr>
+        <form>
+      <fieldset class="form-group">
+        <label class="item-input-wraper"for="title-social-media">Name of your site</label>
+        <input type="email" class="form-control" id="title-social-media" placeholder="Facebook">
+        <small class="text-muted">Don't worry, this isn't permanent</small>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <label for="users-social-media">User Details</label>
+        <textarea class="form-control" id="users-social-media" rows="3" placeholder="I want to have 3 user types. 1.) Artists, 2.) Collectors 3.) Admins"></textarea>
+        <small class="text-muted">Please include what kind of users you would like. Example: admins, users, companies, etc</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="uniqueContent-social-media">User Content</label>
+        <textarea class="form-control" id="uniqueContent-social-media" rows="3" placeholder="1.) Artists can upload their own artwork, comment on artwork, like artwork, and follow other artists 2.) Collectors can buy artwork, comment on artwork, like artwork, and follow artists/collectors. 3.) Admins can delete artwork, delete comments, can comment on artwork, and edit/delete profiles"></textarea>
+        <small class="text-muted">Example: Articles, photos, blog posts, comments, likes, sharing, etc</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="profile-social-media">User Profile</label>
+        <textarea class="form-control" id="profile-social-media" rows="3" placeholder="Users profile is public for other users to see and it includes all of their blog post and a short description about them"></textarea>
+        <small class="text-muted">Include detail about what you want on every type of user's profile</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleTextarea">Color Themes</label>
+        <textarea class="form-control" id="color-single" placeholder="I would like to have cool colors for Facebook. Please include tones of blue, white, and other cool colors on my site. Exact colors I want #37bfb4, rgb(61, 156, 255), Blue" rows="3"></textarea>
+        <small class="text-muted"> Examples: Dark(Black, Navy, Olive Green), Bright(Yellow, Sky Blue, Rose Red), Light(Pastels, White), Cool(Blue, Purple, Green) etc. Include exactly colors if you can</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleTextarea">Style Themes</label>
+        <textarea class="form-control" id="style-single" placeholder="I would like it really simple and clean, but to have that modern feel. I would also like a lot of images" rows="3"></textarea>
+        <small class="text-muted"> Examples: Modern, Simple, Bright & Bold</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleTextarea">Description of your site</label>
+        <textarea class="form-control" id="description-single" placeholder="I would like a site where people can signup and follow a step-by-step process of the exact website they want that gets saved and sent to me to build. The front page I would like to show a little bit about what we do, some projects that we've finished, somewhere to signup/signin, a modern side navbar, and an area where they can see what types of sites they can build. I would like users to be able to fill out an app to make a single page, ecommerce, mobile, or social media site. I also want them to be able to edit that app, and view it later on in their profile. " rows="4"></textarea>
+        <small class="text-muted">Please include every detail of the web application you want made.</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleTextarea">Additional Info</label>
+        <textarea class="form-control" id="additionalInfo-single" placeholder="I'm also attaching a folder of photos via email, that i want you to include into the site, you can decide where based on your best judgement. " rows="3"></textarea>
+        <small class="text-muted">Include any additional info here</small>
+      </fieldset>
+      <p>
+        Press submit to send this to one of our developers who will contact you shortly to discuss what you want built, and to give you a price estimate.
+      </p>
+      <button type="submit" id="socialbutton"class="btn btn-primary">Submit</button>
+    </form>
+
+      </div>
+
+    </section>
+    <!-- //////////////////////////////////////////////////////  Ecommerce /////////////////////////////////////////// -->
+    <section id="ecommerce" class="hide">
+      <div class="container">
+        <h1 style="text-align: center">Ecommerce</h1>
+        <hr>
+        <form>
+      <fieldset class="form-group">
+        <label class="item-input-wraper"for="title-social-media">Name of your site</label>
+        <input type="email" class="form-control" id="title-social-media" placeholder="Facebook">
+        <small class="text-muted">Don't worry, this isn't permanent</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleSelect1">Pages</label>
+        <input type="number" id="pages-single" value="" placeholder="7"><br>
+        <small class="text-muted">Please note every single page you'd like including front page. This can be changed later on as well</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="users-social-media">What type of users are you going to have?</label>
+        <textarea class="form-control" id="users-social-media" rows="3" placeholder="I'm going to have customers that can look at what they previously purchased. I also want them to be able to put stuff into a cart that they can later checkout with."></textarea>
+        <small class="text-muted">Leave blank if you will not have any users and only purchases. Also include everything you want that user to be able to do</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="uniqueContent-social-media">What kind of Product?</label>
+        <textarea class="form-control" id="uniqueContent-social-media" rows="3" placeholder="I'm going to be selling furiture that I personally handcrafted on this site for my small business"></textarea>
+        <small class="text-muted">Example: User posted products, furniture, cars, music, games, etc</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="profile-social-media">Payment Type</label>
+        <textarea class="form-control" id="profile-ecommerce" rows="3" placeholder="I would like the payment to be done online. I want it to be simple and easy. I want the user to be able to checkout easily and buy all the contents inside their cart."></textarea>
+        <small class="text-muted">Example: Online, in person, etc</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleTextarea">Color Themes</label>
+        <textarea class="form-control" id="color-single" placeholder="I would like to have cool colors for Facebook. Please include tones of blue, white, and other cool colors on my site. Exact colors I want #37bfb4, rgb(61, 156, 255), Blue" rows="3"></textarea>
+        <small class="text-muted"> Examples: Dark(Black, Navy, Olive Green), Bright(Yellow, Sky Blue, Rose Red), Light(Pastels, White), Cool(Blue, Purple, Green) etc. Include exactly colors if you can</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleTextarea">Style Themes</label>
+        <textarea class="form-control" id="style-single" placeholder="I would like it really simple and clean, but to have that modern feel. I would also like a lot of images" rows="3"></textarea>
+        <small class="text-muted"> Examples: Modern, Simple, Bright & Bold</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleTextarea">Description of your site</label>
+        <textarea class="form-control" id="description-single" placeholder="I would like a site where people can signup and follow a step-by-step process of the exact website they want that gets saved and sent to me to build. The front page I would like to show a little bit about what we do, some projects that we've finished, somewhere to signup/signin, a modern side navbar, and an area where they can see what types of sites they can build. I would like users to be able to fill out an app to make a single page, ecommerce, mobile, or social media site. I also want them to be able to edit that app, and view it later on in their profile. " rows="4"></textarea>
+        <small class="text-muted">Please include every detail of the web application you want made.</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleTextarea">Additional Info</label>
+        <textarea class="form-control" id="additionalInfo-single" placeholder="I'm also attaching a folder of photos via email, that i want you to include into the site, you can decide where based on your best judgement. " rows="3"></textarea>
+        <small class="text-muted">Include any additional info here</small>
+        Press submit to send this to one of our developers who will contact you shortly to discuss what you want built, and to give you a price estimate.
+      </p>
+      <button type="submit" id="ecommerce button"class="btn btn-primary">Submit</button>
+    </form>
+
+      </div>
+
+    </section>
+    <!-- //////////////////////////////////////////////////////  Mobile /////////////////////////////////////////// -->
+    <section id="mobile" class="hide">
+      <div class="container">
+        <h1 style="text-align: center">Mobile</h1>
+        <hr>
+        <form>
+      <fieldset class="form-group">
+        <label class="item-input-wraper"for="title-social-media">Name of your app</label>
+        <input type="email" class="form-control" id="title-social-media" placeholder="Facebook">
+        <small class="text-muted">Don't worry, this isn't permanent</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleSelect1">How many tabs?</label>
+        <input type="number" id="pages-single" value="" placeholder="4"><br>
+        <small class="text-muted">Please note every single tab you'd like, including front tab. This can be changed later on as well</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleSelect2">What type of app are you looking to make?</label>
+        <select class="form-control" id="exampleSelect2">
+          <option>Game</option>
+          <option>Ecommerce</option>
+          <option>Social Media</option>
+          <option>Business</option>
+          <option>Other</option>
+        </select>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="uniqueContent-social-media">If you picked other please explain what you would like to do</label>
+        <textarea class="form-control" id="uniqueContent-social-media" rows="3" placeholder="I want an app that is a automated to do list"></textarea>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleSelect2">What phone are you trying to launch this to?</label>
+        <select class="form-control" id="exampleSelect2">
+          <option>Iphone</option>
+          <option>Android</option>
+          <option>Both</option>
+          <option>Other</option>
+        </select>
+        <small class="text-muted">If you picked other please let me know which phone in additional info</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleTextarea">Color Themes</label>
+        <textarea class="form-control" id="color-single" placeholder="I would like to have cool colors for Facebook. Please include tones of blue, white, and other cool colors on my site. Exact colors I want #37bfb4, rgb(61, 156, 255), Blue" rows="3"></textarea>
+        <small class="text-muted"> Examples: Dark(Black, Navy, Olive Green), Bright(Yellow, Sky Blue, Rose Red), Light(Pastels, White), Cool(Blue, Purple, Green) etc. Include exactly colors if you can</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleTextarea">Style Themes</label>
+        <textarea class="form-control" id="style-single" placeholder="I would like it really simple and clean, but to have that modern feel. I would also like a lot of images" rows="3"></textarea>
+        <small class="text-muted"> Examples: Modern, Simple, Bright & Bold</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleTextarea">Description of your site</label>
+        <textarea class="form-control" id="description-single" placeholder="I would like a site where people can signup and follow a step-by-step process of the exact website they want that gets saved and sent to me to build. The front page I would like to show a little bit about what we do, some projects that we've finished, somewhere to signup/signin, a modern side navbar, and an area where they can see what types of sites they can build. I would like users to be able to fill out an app to make a single page, ecommerce, mobile, or social media site. I also want them to be able to edit that app, and view it later on in their profile. " rows="4"></textarea>
+        <small class="text-muted">Please include every detail of the web application you want made.</small>
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="exampleTextarea">Additional Info</label>
+        <textarea class="form-control" id="additionalInfo-single" placeholder="I'm also attaching a folder of photos via email, that i want you to include into the site, you can decide where based on your best judgement. " rows="3"></textarea>
+        <small class="text-muted">Include any additional info here</small>
+      </fieldset>
+      <p>
+        Press submit to send this to one of our developers who will contact you shortly to discuss what you want built, and to give you a price estimate.
+      </p>
+      <button type="submit" id="mobilebutton"class="btn btn-primary">Submit</button>
+    </form>
+
+      </div>
+
+    </section>
 
     <!-- Callout -->
-    <aside class="callout">
+    <aside style="margin-top: 50px;"class="callout">
         <div class="text-vertical-center">
             <h1>Vertically Centered Text</h1>
         </div>
@@ -374,6 +602,24 @@
 
     <!-- Custom Theme JavaScript -->
     <script>
+    // adds a hover effect to all the icons
+    $(".ball").hover(
+      function(){
+        $(this).toggleClass('fa-5x')
+      })
+      // puts a clicker on the build icons so when its clicked it will bring up its uild page
+      function buildstep(click, remove) {
+        $(click).click(function(){
+          $(remove).removeClass('hide')
+          $("#services").addClass('hide')
+        })
+      }
+      // calls the clicker on all icons
+      buildstep('#singleball', '#personal')
+      buildstep('#socialball', '#social-media')
+      buildstep('#ecommerceball', '#ecommerce')
+      buildstep('#mobileball', '#mobile')
+
     // Closes the sidebar menu
     $("#menu-close").click(function(e) {
         e.preventDefault();

@@ -54,9 +54,7 @@ app.use('/ecommerce', ecommerceRoutes)
 app.get('/', function(req,res){
   res.sendFile(__dirname, './index.html')
 })
-app.get('/build', function(req,res){
-  res.sendFile(path.join(__dirname, './public', 'build.html'))
-})
+
 
 
 // Redirect Links
