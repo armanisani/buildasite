@@ -140,8 +140,28 @@ MainCtrl.$inject = ["$stateParams", "$state", "auth", "user", "$window"]
     }
 }
 
-  function ProfileCtrl(){
+  function ProfileCtrl($stateParams, userService, $scope, $window){
     console.log("profile ctrl is running");
+    console.log($window.localStorage.getItem('cID'))
+    var user = $window.localStorage.getItem('cID')
+    var vm = this
+    userService.show($window.localStorage.getItem('cID')).success(function(result){
+      if (result){
+      console.log(result)
+      vm.user = result
+      }
+    })
+    function redirecter(id){
+      $location.path("/#/tab/photo/:productId")
+    }
+    vm.edit = function(){
+      userService.update($window.localStorage.getItem('cID'), vm.edit).success(function(result){
+        if(result){
+          console.log(result);
+
+        }
+      })
+    }
   }
 
   function BuildCtrl(){}

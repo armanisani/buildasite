@@ -27,6 +27,54 @@
     <![endif]-->
   </head>
   <body ng-app="buildasite" ng-controller="ProfileCtrl as pc">
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#top"  onclick = $("#menu-close").click(); >Build a Site Workshop</a>
+            </li>
+            <li>
+                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
+            </li>
+            <li>
+                <a data-toggle="modal" data-target="#myModal" href="#" onclick = $("#menu-close").click(); >Signoff</a>
+            </li>
+            <li>
+                <a href="#services" onclick = $("#menu-close").click(); >Build!</a>
+            </li>
+            <li>
+                <a href="#portfolio" onclick = $("#menu-close").click(); >Portfolio</a>
+            </li>
+            <li>
+                <a href="/profile" onclick = $("#menu-close").click(); >Profile</a>
+            </li>
+
+        </ul>
+    </nav>
+    <div class="container">
+      <h1 style="text-align: center">Profile</h1>
+      <hr>
+      <div class="">
+        Name: {{pc.user.first}}
+        {{pc.user.last}}<br>
+        Phone: {{pc.user.phone}}<br>
+        Email: {{pc.user.email}}<br>
+        Current Site: {{pc.user.currentSite}} <br>
+        Living Status: {{pc.user.livingStatus}}<br>
+        Username: {{pc.user.username}}<br>
+        Mobile: {{pc.user.mobile.length}}<br>
+        Ecommerece: {{pc.user.ecommerce.length}}<br>
+        Single/Business Sites: {{pc.user.single.length}}<br>
+        Social Media Sites: {{pc.user.social.length}}<br>
+        Contact Method: {{pc.user.contactMethod}}<br>
+        Twitter: {{pc.user.twitter}}<br>
+        Linkedin: {{pc.user.linkedin}}<br>
+        Google+: {{pc.user.google}}<br>
+
+      </div>
+    </div>
 
 
 
@@ -40,13 +88,47 @@
 
 
 
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h4><strong>Built a Site Workshop</strong>
+                    </h4>
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:armanisani@gmail.com">armanisani@gmail.com</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <!-- <ul class="list-inline">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                        </li>
+                    </ul> -->
+                    <hr class="small">
+                    <p class="text-muted">Copyright &copy; Build a Site Workshop 2017</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- angular -->
+    <script src="js/angular.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <!-- angular js stuff -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    </script>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
-
-
-
-
-
-
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
     // Closes the sidebar menu
     $("#menu-close").click(function(e) {

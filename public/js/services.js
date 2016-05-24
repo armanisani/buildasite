@@ -6,7 +6,7 @@ angular.module('buildasite.services', [])
 .factory('singleService', singleService)
 
 function userService($http){
-  var url = 'http://localhost:8000/users'
+  var url = 'http://localhost:8000/users/'
   var service = {
     index: index,
     show: show,

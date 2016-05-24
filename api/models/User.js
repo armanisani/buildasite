@@ -20,6 +20,7 @@ var userSchema = mongoose.Schema({
   twitter: String,
   linkedin: String,
   google: String,
+  facebook: String,
   hear: {type: String, required: true}
 })
 
