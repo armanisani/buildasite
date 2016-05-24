@@ -12,7 +12,7 @@ angular.module('buildasite', ['ui.router', 'buildasite.controllers', 'buildasite
   .state('profile', {
     url: '/profile/:id',
     templateUrl: '../profile.html',
-    controller: 'ProfileCtrl as profile'
+    controller: 'ProfileCtrl as pc'
   })
   .state('buildasite', {
     url: '/build',
