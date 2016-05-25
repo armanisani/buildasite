@@ -14,6 +14,8 @@ angular.module('buildasite.controllers', [])
   .controller('MobileDetailCtrl', MobileDetailCtrl)
 
 MainCtrl.$inject = ["$stateParams", "$state", "auth", "user", "$window"]
+ProfileCtrl.$inject = ["$stateParams", "userService", "$scope", "$window", "auth"]
+
 
   function MainCtrl($stateParams, $state, auth, user, $window){
     console.log("Main ctrl is running");
@@ -140,7 +142,7 @@ MainCtrl.$inject = ["$stateParams", "$state", "auth", "user", "$window"]
     }
 }
 
-  function ProfileCtrl($stateParams, userService, $scope, $window){
+  function ProfileCtrl($stateParams, userService, $scope, $window, auth){
     console.log("profile ctrl is running");
     console.log($window.localStorage.getItem('cID'))
     var user = $window.localStorage.getItem('cID')
@@ -161,6 +163,12 @@ MainCtrl.$inject = ["$stateParams", "$state", "auth", "user", "$window"]
 
         }
       })
+    }
+    vm.logout = function() {
+      auth.logout && auth.logout()
+    }
+    vm.isAuthed = function() {
+      return auth.isAuthed ? auth.isAuthed() : false
     }
   }
 
