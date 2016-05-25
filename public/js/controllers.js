@@ -106,7 +106,7 @@ MainCtrl.$inject = ["$stateParams", "$state", "auth", "user", "$window"]
         $window.localStorage.removeItem('cID');
       }
     }
-    function userService($http, API, auth) {
+    function userService($http, API, auth, $location) {
       console.log("User service is running");
     var vm = this;
     vm.getQuote = function() {
