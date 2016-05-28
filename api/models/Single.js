@@ -5,8 +5,8 @@ var
 var singleSchema = mongoose.Schema({
   _creator: {type: mongoose.Schema.Types.ObjectId, ref: "User"},
   title: {type: String, required: true},
-  personal: {type: Boolean, required: true},
-  business: {type: Boolean, required: true},
+  personal: Boolean,
+  business: Boolean,
   pages: {type: Number, required: true},
   color: {type: String, required: true},
   style: {type: String, required: true},

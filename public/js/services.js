@@ -115,7 +115,7 @@ function ecommerceService($http){
   }
 }
 function singleService($http){
-  var url = 'http://localhost:8000/single'
+  var url = 'http://localhost:8000/single/'
   var service = {
     index: index,
     show: show,
@@ -132,7 +132,7 @@ function singleService($http){
     return $http.get(url + id)
   }
   function create(data){
-    return $http.post(url, data)
+    return $http.post('http://localhost:8000/', data)
   }
   function update(id, data){
     return $http.patch(url + id, data)

@@ -13,15 +13,16 @@ angular.module('buildasite.controllers', [])
   .controller('SocialDetailCtrl', SocialDetailCtrl)
   .controller('MobileDetailCtrl', MobileDetailCtrl)
 
-MainCtrl.$inject = ["$stateParams", "$state", "auth", "user", "$window"]
+MainCtrl.$inject = ["$stateParams", "$state", "auth", "user", "$window", "$scope", "singleService"]
 ProfileCtrl.$inject = ["$stateParams", "userService", "$scope", "$window", "auth"]
 
 
-  function MainCtrl($stateParams, $state, auth, user, $window){
+  function MainCtrl($stateParams, $state, auth, user, $window, $scope, singleService){
     console.log("Main ctrl is running");
     var vm = this
     vm.currentUserId = ""
     vm.newUser = {}
+    vm.newSingle = {}
     vm.loginUser = {}
     function handleRequest(res) {
     var token = res.data ? res.data.token : null;
@@ -54,6 +55,13 @@ ProfileCtrl.$inject = ["$stateParams", "userService", "$scope", "$window", "auth
   }
   vm.isAuthed = function() {
     return auth.isAuthed ? auth.isAuthed() : false
+  }
+  vm.createSingle = function(){
+    console.log("entering the createSingle");
+    vm.newSingle._creator = vm.currentUserId
+    singleService.create(vm.newSingle).success(function(results){
+      console.log(results, "single created");
+    })
   }
   }
 
@@ -121,6 +129,7 @@ ProfileCtrl.$inject = ["$stateParams", "userService", "$scope", "$window", "auth
           password: password
         })
     }
+
     vm.register = function(first, last, phone, email, currentSite, livingStatus, username, password, contactMethod, twitter, linkedin, google, hear){
       console.log("second register");
 

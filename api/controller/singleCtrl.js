@@ -39,8 +39,15 @@ module.exports = {
   },
   create: function(req,res){
     var newSingle = new Single(req.body)
-    newSingle.save(function(err,ecom){
-      if(err) throw err
+    newSingle.save(function(err, single){
+      if (err) {
+   console.log('Error Inserting New Data');
+   if (err.name == 'ValidationError') {
+       for (field in err.errors) {
+           console.log(err.errors[field].message);
+       }
+   }
+}
       res.json({message: "Single is created", single: single})
     })
   }
