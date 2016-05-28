@@ -41,9 +41,16 @@ module.exports = {
     })
   },
   create: function(req,res) {
-    var newEcom = new Eccommerce(req.body)
+    var newEcom = new Ecommerce(req.body)
     newEcom.save(function(err,ecom){
-      if(err) throw err
+      if (err) {
+   console.log('Error Inserting New Data');
+   if (err.name == 'ValidationError') {
+       for (field in err.errors) {
+           console.log(err.errors[field].message);
+       }
+   }
+}
       res.json({message: 'Ecommerce is created', ecom: ecom})
     })
   }

@@ -40,7 +40,14 @@ module.exports = {
   create: function(req,res){
     var newSocial = new Social(req.body)
     newSocial.save(function(err,social){
-      if(err) throw err
+      if (err) {
+   console.log('Error Inserting New Data');
+   if (err.name == 'ValidationError') {
+       for (field in err.errors) {
+           console.log(err.errors[field].message);
+       }
+   }
+}
       res.json({message: 'Social Media is created', social: social})
     })
   }

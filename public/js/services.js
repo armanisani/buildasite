@@ -34,7 +34,7 @@ function userService($http){
   }
 }
 function socialService($http){
-  var url = 'http://localhost:8000/social'
+  var url = 'http://localhost:8000/social/'
   var service = {
     index: index,
     show: show,
@@ -61,7 +61,7 @@ function socialService($http){
   }
 }
 function mobileService($http){
-  var url = 'http://localhost:8000/mobile'
+  var url = 'http://localhost:8000/mobile/'
   var service = {
     index: index,
     show: show,
@@ -88,7 +88,7 @@ function mobileService($http){
   }
 }
 function ecommerceService($http){
-  var url = 'http://localhost:8000/ecommerce'
+  var url = 'http://localhost:8000/ecommerce/'
   var service = {
     index: index,
     show: show,
