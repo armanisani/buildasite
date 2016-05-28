@@ -40,9 +40,16 @@ module.exports = {
   },
   create: function(req,res) {
     var newMobile = new Mobile(req.body)
-    newMobile.save(function(err,ecom){
-      if(err) throw err
-      res.json({message: "Mobile site created", mobile:mobile})
+    newMobile.save(function(err, mobile){
+      if (err) {
+   console.log('Error Inserting New Data');
+   if (err.name == 'ValidationError') {
+       for (field in err.errors) {
+           console.log(err.errors[field].message);
+       }
+   }
+ }
+      res.json({message: "Mobile site created", mobile: mobile})
     })
   }
 }

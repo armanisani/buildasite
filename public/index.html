@@ -438,17 +438,17 @@
         <form>
       <fieldset class="form-group">
         <label class="item-input-wraper"for="title-social-media">Name of your app</label>
-        <input type="text" class="form-control" id="title-social-media" placeholder="Facebook">
+        <input type="text" class="form-control" id="title-mobile" placeholder="Facebook">
         <small class="text-muted">Don't worry, this isn't permanent</small>
       </fieldset>
       <fieldset class="form-group">
         <label for="exampleSelect1">How many tabs?</label>
-        <input type="number" id="pages-single" value="" placeholder="4"><br>
+        <input type="number" id="pages-mobile" value="" placeholder="4"><br>
         <small class="text-muted">Please note every single tab you'd like, including front tab. This can be changed later on as well</small>
       </fieldset>
       <fieldset class="form-group">
         <label for="exampleSelect2">What type of app are you looking to make?</label>
-        <select class="form-control" id="exampleSelect2">
+        <select class="form-control" id="type-mobile">
           <option>Game</option>
           <option>Ecommerce</option>
           <option>Social Media</option>
@@ -458,11 +458,11 @@
       </fieldset>
       <fieldset class="form-group">
         <label for="uniqueContent-social-media">If you picked other please explain what you would like to do</label>
-        <textarea class="form-control" id="uniqueContent-social-media" rows="3" placeholder="I want an app that is a automated to do list"></textarea>
+        <textarea class="form-control" id="other-media" rows="3" placeholder="I want an app that is a automated to do list"></textarea>
       </fieldset>
       <fieldset class="form-group">
         <label for="exampleSelect2">What phone are you trying to launch this to?</label>
-        <select class="form-control" id="exampleSelect2">
+        <select class="form-control" id="phone-mobile">
           <option>Iphone</option>
           <option>Android</option>
           <option>Both</option>
@@ -472,12 +472,12 @@
       </fieldset>
       <fieldset class="form-group">
         <label for="exampleTextarea">Color Themes</label>
-        <textarea class="form-control" id="color-single" placeholder="I would like to have cool colors for Facebook. Please include tones of blue, white, and other cool colors on my site. Exact colors I want #37bfb4, rgb(61, 156, 255), Blue" rows="3"></textarea>
+        <textarea class="form-control" id="color-mobile" placeholder="I would like to have cool colors for Facebook. Please include tones of blue, white, and other cool colors on my site. Exact colors I want #37bfb4, rgb(61, 156, 255), Blue" rows="3"></textarea>
         <small class="text-muted"> Examples: Dark(Black, Navy, Olive Green), Bright(Yellow, Sky Blue, Rose Red), Light(Pastels, White), Cool(Blue, Purple, Green) etc. Include exactly colors if you can</small>
       </fieldset>
       <fieldset class="form-group">
         <label for="exampleTextarea">Style Themes</label>
-        <textarea class="form-control" id="style-single" placeholder="I would like it really simple and clean, but to have that modern feel. I would also like a lot of images" rows="3"></textarea>
+        <textarea class="form-control" id="style-mobile" placeholder="I would like it really simple and clean, but to have that modern feel. I would also like a lot of images" rows="3"></textarea>
         <small class="text-muted"> Examples: Modern, Simple, Bright & Bold</small>
       </fieldset>
       <fieldset class="form-group">
@@ -487,7 +487,7 @@
       </fieldset>
       <fieldset class="form-group">
         <label for="exampleTextarea">Additional Info</label>
-        <textarea class="form-control" id="additionalInfo-single" placeholder="I'm also attaching a folder of photos via email, that i want you to include into the site, you can decide where based on your best judgement. " rows="3"></textarea>
+        <textarea class="form-control" id="additionalInfo-smobile" placeholder="I'm also attaching a folder of photos via email, that i want you to include into the site, you can decide where based on your best judgement. " rows="3"></textarea>
         <small class="text-muted">Include any additional info here</small>
       </fieldset>
       <p>
@@ -637,6 +637,16 @@
         contentType: 'application/json'
       }).done(function(){
         console.log('ecom posted');
+      })
+    })
+    $('#mobilebutton').click(function(){
+      $.ajax({
+        method: "post",
+        url: "/mobile",
+        data: JSON.stringify({_creator: localStorage['cID'], title: $('#title-mobile').val(), phoneType: $('#phone-mobile').val(), tabs: $('#pages-mobile').val(), type: $('#type-mobile').val(), color: $('#color-mobile').val(), style: $('#style-mobile').val(), description: $('#description-mobile').val(), additionalInfo: $('#additionalInfo-mobile').val(), other: $('#other-media').val()  }),
+        contentType: 'application/json'
+      }).done(function(){
+        console.log("mobile posted");
       })
     })
     $('#socialbutton').click(function(){
