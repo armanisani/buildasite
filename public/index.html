@@ -114,7 +114,7 @@
           </fieldset>
           <fieldset class="form-group">
             <label for="exampleTextarea">Contact Method</label>
-            <textarea ng-model="main.newUser.contactMethod"class="form-control" id="description-single" placeholder="Please email me or call me around 5pm on wednesday and thursdays" rows="2"></textarea>
+            <textarea ng-model="main.newUser.contactMethod"class="form-control" id="contact-signup" placeholder="Please email me or call me around 5pm on wednesday and thursdays" rows="2"></textarea>
           </fieldset>
           <fieldset class="form-group">
             <label class="item-input-wraper"for="exampleInputTitle1">Twitter</label>
@@ -351,7 +351,7 @@
       </fieldset>
       <fieldset class="form-group">
         <label for="exampleTextarea">Description of your site</label>
-        <textarea class="form-control" id="description-single" placeholder="I would like a site where people can signup and follow a step-by-step process of the exact website they want that gets saved and sent to me to build. The front page I would like to show a little bit about what we do, some projects that we've finished, somewhere to signup/signin, a modern side navbar, and an area where they can see what types of sites they can build. I would like users to be able to fill out an app to make a single page, ecommerce, mobile, or social media site. I also want them to be able to edit that app, and view it later on in their profile. " rows="4"></textarea>
+        <textarea class="form-control" id="description-social-media" placeholder="I would like a site where people can signup and follow a step-by-step process of the exact website they want that gets saved and sent to me to build. The front page I would like to show a little bit about what we do, some projects that we've finished, somewhere to signup/signin, a modern side navbar, and an area where they can see what types of sites they can build. I would like users to be able to fill out an app to make a single page, ecommerce, mobile, or social media site. I also want them to be able to edit that app, and view it later on in their profile. " rows="4"></textarea>
         <small class="text-muted">Please include every detail of the web application you want made.</small>
       </fieldset>
       <fieldset class="form-group">
@@ -411,7 +411,7 @@
       </fieldset>
       <fieldset class="form-group">
         <label for="exampleTextarea">Description of your site</label>
-        <textarea class="form-control" id="description-single" placeholder="I would like a site where people can signup and follow a step-by-step process of the exact website they want that gets saved and sent to me to build. The front page I would like to show a little bit about what we do, some projects that we've finished, somewhere to signup/signin, a modern side navbar, and an area where they can see what types of sites they can build. I would like users to be able to fill out an app to make a single page, ecommerce, mobile, or social media site. I also want them to be able to edit that app, and view it later on in their profile. " rows="4"></textarea>
+        <textarea class="form-control" id="description-ecommerce" placeholder="I would like a site where people can signup and follow a step-by-step process of the exact website they want that gets saved and sent to me to build. The front page I would like to show a little bit about what we do, some projects that we've finished, somewhere to signup/signin, a modern side navbar, and an area where they can see what types of sites they can build. I would like users to be able to fill out an app to make a single page, ecommerce, mobile, or social media site. I also want them to be able to edit that app, and view it later on in their profile. " rows="4"></textarea>
         <small class="text-muted">Please include every detail of the web application you want made.</small>
       </fieldset>
       <fieldset class="form-group">
@@ -478,7 +478,7 @@
       </fieldset>
       <fieldset class="form-group">
         <label for="exampleTextarea">Description of your site</label>
-        <textarea class="form-control" id="description-single" placeholder="I would like a site where people can signup and follow a step-by-step process of the exact website they want that gets saved and sent to me to build. The front page I would like to show a little bit about what we do, some projects that we've finished, somewhere to signup/signin, a modern side navbar, and an area where they can see what types of sites they can build. I would like users to be able to fill out an app to make a single page, ecommerce, mobile, or social media site. I also want them to be able to edit that app, and view it later on in their profile. " rows="4"></textarea>
+        <textarea class="form-control" id="description-mobile" placeholder="I would like a site where people can signup and follow a step-by-step process of the exact website they want that gets saved and sent to me to build. The front page I would like to show a little bit about what we do, some projects that we've finished, somewhere to signup/signin, a modern side navbar, and an area where they can see what types of sites they can build. I would like users to be able to fill out an app to make a single page, ecommerce, mobile, or social media site. I also want them to be able to edit that app, and view it later on in their profile. " rows="4"></textarea>
         <small class="text-muted">Please include every detail of the web application you want made.</small>
       </fieldset>
       <fieldset class="form-group">
@@ -608,13 +608,14 @@
 
     <!-- Custom Theme JavaScript -->
     <script>
+    var additionalInfo = $('#additionalInfo-single').val()
     // personal ajax call
     $('#personalbutton').click(function(){
       console.log("clicked");
       $.ajax({
         method: "post",
         url: '/single',
-        data: JSON.stringify({title: $('#title-single'), personal: $('#personal-single'), business: $('business-single'), pages: $('#pages-single'), color: ('#color-single'), style: $('#style-single'), description: $('#description-single'), additionalInfo: $('additionalInfo-single')}),
+        data: JSON.stringify({title: $('#title-single').val(), personal: $('personal-single').val(), business:  $('business-single').val(), pages: $('#pages-single').val(), color: $('#color-single').val(), style: $('#style-single').val(), description: $('#description-single').val(), additionalInfo: $('#additionalInfo-single').val()}),
         contentType: 'application/json'
       }).done(function(){
         console.log("single posted");
