@@ -2,6 +2,8 @@ var
   express = require('express')
   userRouter = express.Router()
   userCtrl = require('../controller/userCtrl.js')
+  User = require('../models/User.js')
+  Single = require('../models/Single.js')
 
 userRouter.post('/authenticate', userCtrl.authenticate)
 userRouter.route('/users')
@@ -14,23 +16,26 @@ userRouter.route('/users/:id')
   .delete(userCtrl.destroy)
   .patch(userCtrl.update)
 
-
-  userRouter.post('/users/single', isLoggedIn, function(req, res){
-    var newSingle = new Single(req.body)
-    console.log("req.user");
-    console.log(req.user)
-    User.findOne({_id: req.user._id}, function(err, user){
-      newSingle._creator = user
-      newSingle.save(function(err, single){
-        console.log(single);
-        if (err) console.log(err)
-        user.single.push(single)
-        user.save(function(err, user){
-          res.json({success:true, single})
-        })
-      })
-    })
-  })
+userRouter.post('/users/:id/single', userCtrl.singlecreate)
+userRouter.post('/users/:id/social', userCtrl.socialcreate)
+userRouter.post('/users/:id/ecommerce', userCtrl.ecomcreate)
+userRouter.post('/users/:id/mobile', userCtrl.mobilecreate)
+  // userRouter.post('/users/single', isLoggedIn, function(req, res){
+  //   var newSingle = new Single(req.body)
+  //   console.log("req.user");
+  //   console.log(req.user)
+  //   User.findOne({_id: req.user._id}, function(err, user){
+  //     newSingle._creator = user
+  //     newSingle.save(function(err, single){
+  //       console.log(single);
+  //       if (err) console.log(err)
+  //       user.single.push(single)
+  //       user.save(function(err, user){
+  //         res.json({success:true, single})
+  //       })
+  //     })
+  //   })
+  // })
 
   function isLoggedIn(req, res, next) {
 

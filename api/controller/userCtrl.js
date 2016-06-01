@@ -1,6 +1,10 @@
 var
   User = require('../models/User.js'),
-  jwt = require('jsonwebtoken')
+  jwt = require('jsonwebtoken'),
+  Single = require('../models/Single.js'),
+  Social = require('../models/Social.js'),
+  Mobile = require('../models/Mobile.js'),
+  Ecommerce = require('../models/Ecommerce.js')
 
 module.exports = {
   index: function(req,res){
@@ -96,5 +100,69 @@ module.exports = {
          message: "no token was provided"
        })
      }
-   }
+   },
+   singlecreate: function(req,res){
+     User.findOne({_id: req.params.id}, function(err, user){
+       if(err) return console.log(err)
+         var newSingle = new Single(req.body)
+         newSingle._creator = User._id
+         newSingle.save(function(err){
+           if(err) return console.log(err)
+           console.log(user);
+           console.log(user.single, "single");
+           user.single.push(newSingle)
+           user.save(function(err,user){
+             res.json(user)
+           })
+         })
+     }
+   )},
+   socialcreate: function(req,res){
+     User.findOne({_id: req.params.id}, function(err, user){
+       if(err) return console.log(err)
+         var newSocial = new Social(req.body)
+         newSocial._creator = User._id
+         newSocial.save(function(err){
+           if(err) return console.log(err)
+           console.log(user);
+           console.log(user.social, "social");
+           user.social.push(newSocial)
+           user.save(function(err,user){
+             res.json(user)
+           })
+         })
+     }
+   )},
+   mobilecreate: function(req,res){
+     User.findOne({_id: req.params.id}, function(err, user){
+       if(err) return console.log(err)
+         var newMobile = new Mobile(req.body)
+         newMobile._creator = User._id
+         newMobile.save(function(err){
+           if(err) return console.log(err)
+           console.log(user);
+           console.log(user.mobile, "mobile");
+           user.mobile.push(newMobile)
+           user.save(function(err,user){
+             res.json(user)
+           })
+         })
+     }
+   )},
+   ecomcreate: function(req,res){
+     User.findOne({_id: req.params.id}, function(err, user){
+       if(err) return console.log(err)
+         var newEcommerce = new Ecommerce(req.body)
+         newEcommerce._creator = User._id
+         newEcommerce.save(function(err){
+           if(err) return console.log(err)
+           console.log(user);
+           console.log(user.ecommerce, "ecommerce");
+           user.ecommerce.push(newEcommerce)
+           user.save(function(err,user){
+             res.json(user)
+           })
+         })
+     }
+   )}
 }
