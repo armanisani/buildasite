@@ -41,14 +41,17 @@ module.exports = {
     var newSingle = new Single(req.body)
     newSingle.save(function(err, single){
       if (err) {
-   console.log('Error Inserting New Data');
-   if (err.name == 'ValidationError') {
-       for (field in err.errors) {
-           console.log(err.errors[field].message);
-       }
-   }
-}
-      res.json({message: "Single is created", single: single})
+         console.log('Error Inserting New Data');
+         if (err.name == 'ValidationError') {
+           for (field in err.errors) {
+               console.log(err.errors[field].message);
+           }
+         }
+      }
+      res.json(single)
     })
+    .catch(function(err){
+        res.json({error: err})
+      })
   }
 }

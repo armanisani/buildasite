@@ -14,6 +14,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
 
@@ -305,7 +306,7 @@
       <p>
         Press submit to send this to one of our developers who will contact you shortly to discuss what you want built, and to give you a price estimate.
       </p>
-      <button type="button"  id="personalbutton" class="btn btn-primary">Submit</button>
+      <button type="button" href="#build"  id="personalbutton" class="btn btn-primary">Submit</button>
     </form>
 
       </div>
@@ -618,14 +619,21 @@
     console.log(localStorage['cID']);
     // personal ajax call
     $('#personalbutton').click(function(){
+      console.log(localStorage['cID']);
       console.log("clicked");
       $.ajax({
         method: "post",
-        url: '/single',
+        url: '/users/single',
         data: JSON.stringify({_creator: localStorage['cID'], title: $('#title-single').val(), personal: $('personal-single').val(), business:  $('business-single').val(), pages: $('#pages-single').val(), color: $('#color-single').val(), style: $('#style-single').val(), description: $('#description-single').val(), additionalInfo: $('#additionalInfo-single').val()}),
         contentType: 'application/json'
-      }).done(function(){
-        console.log("single posted");
+      }).done(function(result){
+          
+        if(result.error) {
+          alert("Please fill out all information")
+        } else {
+          $('#services').removeClass('hide')
+          $("#personal").addClass('hide')
+        }
       })
     })
     $('#ecombutton').click(function(){
