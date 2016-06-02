@@ -117,3 +117,8 @@ $(function() {
         }
     });
 });
+
+$('.back').click(function(){
+  $('#services').removeClass('hide')
+  $(this).closest('section').addClass('hide')
+})
