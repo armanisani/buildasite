@@ -5,7 +5,7 @@ module.exports = {
   development: {
     db: 'mongodb://localhost/build-a-site',
     port: 8000,
-    secret: 'buildabear'
+    secret: ""
   },
   rootPath: rootPath
 }

@@ -2,7 +2,7 @@ module.exports = {
   'facebook':{
     // 'clientID':,
     // 'clientSecret': ,
-    // 'callbackURL': 'https://skedj.herokuapp.com/users/auth/facebook/callback',
+    // 'callbackURL': ,
     'profileFields': ['emails','displayName']
   }
 

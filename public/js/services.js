@@ -6,7 +6,7 @@ angular.module('buildasite.services', [])
 .factory('singleService', singleService)
 
 function userService($http){
-  var url = 'http://localhost:8000/users/'
+  var url = 'https://buildasiteworkshop.herokuapp.com/users/'
   var service = {
     index: index,
     show: show,
@@ -24,7 +24,7 @@ function userService($http){
   }
   function create(data){
     console.log("user has been created");
-    return $http.post('http://localhost:8000/', data)
+    return $http.post('https://buildasiteworkshop.herokuapp.com/', data)
   }
   function update(id, data){
     return $http.patch(url + id, data)
@@ -34,7 +34,7 @@ function userService($http){
   }
 }
 function socialService($http){
-  var url = 'http://localhost:8000/social/'
+  var url = 'https://buildasiteworkshop.herokuapp.com/social/'
   var service = {
     index: index,
     show: show,
@@ -61,7 +61,7 @@ function socialService($http){
   }
 }
 function mobileService($http){
-  var url = 'http://localhost:8000/mobile/'
+  var url = 'https://buildasiteworkshop.herokuapp.com/mobile/'
   var service = {
     index: index,
     show: show,
@@ -88,7 +88,7 @@ function mobileService($http){
   }
 }
 function ecommerceService($http){
-  var url = 'http://localhost:8000/ecommerce/'
+  var url = 'https://buildasiteworkshop.herokuapp.com/ecommerce/'
   var service = {
     index: index,
     show: show,
@@ -115,7 +115,7 @@ function ecommerceService($http){
   }
 }
 function singleService($http){
-  var url = 'http://localhost:8000/single/'
+  var url = 'https://buildasiteworkshop.herokuapp.com/single/'
   var service = {
     index: index,
     show: show,
@@ -132,7 +132,7 @@ function singleService($http){
     return $http.get(url + id)
   }
   function create(data){
-    return $http.post('http://localhost:8000/', data)
+    return $http.post('https://buildasiteworkshop.herokuapp.com/', data)
   }
   function update(id, data){
     return $http.patch(url + id, data)
